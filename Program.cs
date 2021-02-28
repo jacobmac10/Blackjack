@@ -25,6 +25,17 @@ namespace Blackjack
             return opcionCarta;
         }
         
+         static int MostrarCartaRandom()
+        {
+            /// <summary>
+            ///  Si el jugador solicita una carta, generar aleatoriamente una carta de una baraja y agregarla a las cartas que tiene el jugador.
+            /// </summary>
+            /// <returns>La carta random que genre el sistema del 1 al 11</returns>
+            Random rnd = new Random();
+            //numeros random del 1 al 11
+            int option = rnd.Next(1, 11);
+            return option;
+        }
 
         
         
@@ -33,6 +44,9 @@ namespace Blackjack
         {
             int opcionCarta = SelectOption();
             //Console.WriteLine("mano: " + opcionCarta);
+             //TODO: Se entrega la carta random
+            int aiOption = MostrarCartaRandom();
+            Console.WriteLine("Mano: " + aiOption);
 
          
          
