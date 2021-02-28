@@ -25,14 +25,33 @@ namespace Blackjack
         static int NumeroCartas()
         {
             int CartasJugador = 0;
-            Console.WriteLine("Que comience el juego, tienes: " + CartasJugador + "cartas en mano" );
+            Console.WriteLine("Que comience el juego, tienes: " + CartasJugador + "  cartas en mano" );
             return CartasJugador;
 
         }
 
+
+        /// <summary>
+        /// le dimos a elegir al jugador sobre si desea tener una nueva carta o no
+        /// </summary>
+        /// <returns>S para si, N para no</returns>
+
+        static string PedirCartas()
+        {
+            Console.WriteLine("¿Desea una nueva carta?");
+           Console.WriteLine("S = si"); // s para si 
+           Console.WriteLine("N = no"); //N para no 
+
+           string opcion = Convert.ToString(Console.ReadLine());
+           return opcion;
+        }
+
         static void Main(string[] args)
         {
-            int aiCarta = generarCartas();
+
+            int CartasJugador = NumeroCartas(); // el jugador tiene 0 cartas en mano
+            string opcion = PedirCartas(); // se le dio al jugador la opcion de pedir mas cartas
+            
         }
 
 
