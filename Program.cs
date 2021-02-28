@@ -53,18 +53,28 @@ namespace Blackjack
         /// <param name="cartaAleatoria">carta generada de manera aleatoria del 1 al 11</param>
         static void EntregaDeCarta(int CartasJugador, string opcion, int cartaAleatoria)
         {
-          if(opcion == "s")
-          {
-              Console.WriteLine("cartas en mano: " + cartaAleatoria);
-          }
-          else if(opcion == "n")
-          {
-              Console.WriteLine("cartas en mano: " + CartasJugador);
-          }
-          else
-          {
-              Console.WriteLine("comando no valido, por favor, elija una de las siguientes opciones: S= si, N = no");
-          }
+            if (opcion == "s")
+            {
+                Console.WriteLine("cartas en mano: " + cartaAleatoria);
+            }
+            else if (opcion == "n")
+            {
+                Console.WriteLine("cartas en mano: " + CartasJugador);
+            }
+            else
+            {
+                Console.WriteLine("comando no valido, por favor, elija una de las siguientes opciones: S= si, N = no");
+            }
+        }
+        /// <summary>
+        /// sumatoria de puntos del jugador 
+        /// </summary>
+        /// <param name="cartaAleatoria">carta generada aleatoriamente</param>
+        /// <param name="CartasJugador">cartas que tiene el jugador (0)</param>
+        static void sumaPuntos(int cartaAleatoria, int CartasJugador)
+        {
+            int suma = cartaAleatoria + CartasJugador; //sumamos el numero de cartas del jugador con el puntaje de las cartas aleatorias
+            Console.WriteLine("total de puntos: " + suma);
         }
 
         static void Main(string[] args)
@@ -74,10 +84,13 @@ namespace Blackjack
             string opcion = PedirCartas(); // se le dio al jugador la opcion de pedir mas cartas
 
             int cartaAleatoria = generarCartas();
-            
+
             EntregaDeCarta(CartasJugador, opcion, cartaAleatoria);
 
+            sumaPuntos(cartaAleatoria, CartasJugador); //sumatoria puntos jugador
+
         }
+
 
 
 
