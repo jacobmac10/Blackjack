@@ -4,75 +4,45 @@ namespace Blackjack
 {
     class Program
     {
-      
         /// <summary>
-        /// Entregar a usuario conjunto de cartas vacio, 
-        ///  
+        /// vamos a generar las cartas del juego y mostrarlas de manera aleatoria
+        /// cartas del 1 al 11
         /// </summary>
-        /// <returns>el usuario tiene 0 cartas</returns>
-
-        static int conjuntoDeCartas()
+        /// <returns>el valor aleatorio (aiCarta)</returns>
+        static int generarCartas()
         {
-           // entregamos al jugador un conjunto de cartas vacio
-            int cartasjugador = 0;
-
-            Console.WriteLine("Empecemos, su mano tiene " + cartasjugador + " cartas");
-           
-            
-            
-            int opcionCarta = Convert.ToInt32(Console.ReadLine());
-            return opcionCarta;
-            
-
-        }
-        /// <summary>
-        /// preguntar si el jugador desea una nueva carta
-        /// </summary>
-        /// <returns>1) pedira carta, 2) No quiero</returns>
-        static int pedirNuevaCarta()
-        {
-            Console.WriteLine("Conjunto de cartas vacio, ¿Quieres una carta?");
-            Console.WriteLine("1) Pedir carta");
-            Console.WriteLine("2) No quiero");
-
-            int nuevaCarta = Convert.ToInt32(Console.ReadLine());
-            return nuevaCarta;
-        }
-        
-         static int MostrarCartaRandom()
-        {
-            /// <summary>
-            ///  Si el jugador solicita una carta, generar aleatoriamente una carta de una baraja y agregarla a las cartas que tiene el jugador.
-            /// </summary>
-            /// <returns>La carta random que genre el sistema del 1 al 12</returns>
             Random rnd = new Random();
-            //numeros random del 1 al 11 tomamos as como 11
-            int option = rnd.Next(1, 12);
-            return option;
+
+            int aiCarta = rnd.Next(1, 12); // los numeros random generados seran del 1 al 11. tomando As como 11.
+            return aiCarta;
         }
 
-        
-        
+        /// <summary>
+        /// El jugador comienza con un conjunto de cartas vacío
+        /// </summary>
+       
+       /// <returns>el numero de cartas que tiene el jugador al comenzar el juego (0)</returns>
+        static int NumeroCartas()
+        {
+            int CartasJugador = 0;
+            Console.WriteLine("Que comience el juego, tienes: " + CartasJugador + "cartas en mano" );
+            return CartasJugador;
+
+        }
 
         static void Main(string[] args)
         {
-            int opcionCarta = conjuntoDeCartas();
-            
-            int nuevaCarta = pedirNuevaCarta();
-
-             //TODO: Se entrega la carta random
-            int aiOption = MostrarCartaRandom();
-            Console.WriteLine("Mano: " + aiOption);
-         
-
-         
-         
-            
-
-            
-            
-
+            int aiCarta = generarCartas();
         }
+
+
+
+
+
+
+
+
+
     }
 }
-        
+
