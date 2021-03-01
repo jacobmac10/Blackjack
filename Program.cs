@@ -21,10 +21,10 @@ namespace Blackjack
         /// El jugador comienza con un conjunto de cartas vacío
         /// </summary>
 
-        /// <returns>el numero de cartas que tiene el jugador al comenzar el juego (0)</returns>
+        /// <returns>el numero de cartas que tiene el jugador al comenzar el juego (2) modificamos el inicio del juego</returns>
         static int NumeroCartas()
         {
-            int CartasJugador = 2;
+            int CartasJugador = 2;//(fix) Modificar la lógica de inicio de juego para entregar la primer tarjeta al jugador automáticamente sin que lo solicite.
             Console.WriteLine("Que comience el juego, tienes: " + CartasJugador + "  cartas en mano");
             return CartasJugador;
 
@@ -87,7 +87,7 @@ namespace Blackjack
         }
 
 
-        static int suma = 2;
+        static int suma = 2; //(fix) Modificar la lógica de inicio de juego para entregar la primer tarjeta al jugador automáticamente sin que lo solicite.
 
         static void Main(string[] args)
         {
