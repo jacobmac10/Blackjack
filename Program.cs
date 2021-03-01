@@ -72,7 +72,7 @@ namespace Blackjack
         /// </summary>
         /// <param name="CartaAleatoria">carta generada aleatoriamente</param>
         /// <param name="CartasJugador">cartas que tiene el jugador (0)</param>
-        
+
         static void sumaPuntos(int CartasJugador, int cartaAleatoria, string opcion2)
         {
 
@@ -83,53 +83,63 @@ namespace Blackjack
             Console.WriteLine("total de puntos: " + suma);
 
 
-          
+
         }
 
 
-       static int suma = 0;
-       
+        static int suma = 0;
+
         static void Main(string[] args)
         {
             int CartasJugador = NumeroCartas();
-            
 
-     
 
+
+            // hacemos un ciclo while para que el jugador pueda pedir varias veces ua carta hasta llegar a 21 
             while (suma < 21)
             {
                 Console.WriteLine("¿Desea una nueva carta?");
                 Console.WriteLine("s = si"); // s para si 
                 Console.WriteLine("n = no"); //n para no 
                 string opcion = Convert.ToString(Console.ReadLine());
-                
+
                 if (opcion == "s")
                 {
                     Random rnd = new Random();
-                     int aiCarta = rnd.Next(1, 12);
+                    int aiCarta = rnd.Next(1, 12);
 
-            
-                    
+
+
                     suma = aiCarta + suma; //sumamos el numero de cartas del jugador con el puntaje de las cartas aleatorias
 
 
                     Console.WriteLine("puntos de cartas: " + suma);
-                }
+                } ///
+                  ///Cuando el jugador se detenga, generar aleatoriamente un número entre el 17 y el 26 (incluyendo ambos números). Este será el valor de "la casa" contra el cual debe competir el número obtenido por las cartas del jugador.
 
+                  ///
+                else if (opcion == "n")
+                {
+
+                    Random rnd = new Random();
+                    int lehouseAi = rnd.Next(17, 26);
+                    Console.WriteLine("La casa tiene: " + lehouseAi);
+
+
+                }
             }
+
         }
 
 
 
-       
-
-       
 
 
 
 
 
-       
+
+
 
 
     }
