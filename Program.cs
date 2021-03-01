@@ -150,8 +150,22 @@ namespace Blackjack
                         Console.WriteLine("Ganó el jugador con " + suma);
                     }
                     Console.WriteLine(CartasJugador);
+                    
+
+                    // El jugador obtiene un 21 y la casa obtiene un numero menor
+                     if (suma == 21 )
+                    {
+                            Console.WriteLine("Gano el jugador con " + suma);
+                    }
+                    if (suma > 21 )
+                    {
+                            Console.WriteLine("Gana la casa");
+                    }
 
                     break;
+                   
+                    
+                   
                 }
             }
         }
