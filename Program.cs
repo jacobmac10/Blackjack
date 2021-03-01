@@ -24,7 +24,7 @@ namespace Blackjack
         /// <returns>el numero de cartas que tiene el jugador al comenzar el juego (0)</returns>
         static int NumeroCartas()
         {
-            int CartasJugador = 0;
+            int CartasJugador = 2;
             Console.WriteLine("Que comience el juego, tienes: " + CartasJugador + "  cartas en mano");
             return CartasJugador;
 
@@ -87,7 +87,7 @@ namespace Blackjack
         }
 
 
-        static int suma = 0;
+        static int suma = 2;
 
         static void Main(string[] args)
         {
@@ -126,7 +126,7 @@ namespace Blackjack
                     Console.WriteLine("La casa tiene: " + lehouseAi);
 
                     // El jugador obtiene un 21 y la casa obtiene un número menor
-                    if (suma == 21 && lehouseAi != 21)
+                    if (suma == 21 && lehouseAi > 21) 
                     {
                         Console.WriteLine("Gano " + suma);
                     }
@@ -140,7 +140,7 @@ namespace Blackjack
                         Console.WriteLine("Gano " + suma);
                     }
                     //El jugador y la casa obtienen un número menor o igual a 21, pero el jugador obtiene un número más alto.
-                    else if (suma > lehouseAi && suma < 21)
+                    else if (suma > lehouseAi && suma < 21) // 9. (fix) Modificar el valor del as; tomarlo con valor de 11 cuando sea posible hacerlo sin que el número total del jugador sobrepase el límite de 21, o en caso contrario tomarlo con valor de 1.
                     {
                         Console.WriteLine("Gano  " + suma);
                     }
@@ -162,7 +162,8 @@ namespace Blackjack
                             Console.WriteLine("Gana la casa");
                     }
 
-                    break;
+
+                
                    
                     
                    
