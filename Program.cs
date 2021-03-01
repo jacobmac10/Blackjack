@@ -38,6 +38,7 @@ namespace Blackjack
 
         static string PedirCartas()
         {
+
             Console.WriteLine("¿Desea una nueva carta?");
             Console.WriteLine("s = si"); // s para si 
             Console.WriteLine("n = no"); //n para no 
@@ -69,37 +70,79 @@ namespace Blackjack
         /// <summary>
         /// sumatoria de puntos del jugador 
         /// </summary>
-        /// <param name="cartaAleatoria">carta generada aleatoriamente</param>
+        /// <param name="CartaAleatoria">carta generada aleatoriamente</param>
         /// <param name="CartasJugador">cartas que tiene el jugador (0)</param>
-        static void sumaPuntos(int cartaAleatoria, int CartasJugador)
+        
+        static void sumaPuntos(int CartasJugador, int cartaAleatoria, string opcion2)
         {
+
+
+
+
             int suma = cartaAleatoria + CartasJugador; //sumamos el numero de cartas del jugador con el puntaje de las cartas aleatorias
             Console.WriteLine("total de puntos: " + suma);
+
+
+          
         }
 
+
+       static int suma = 0;
+       
         static void Main(string[] args)
         {
+            int CartasJugador = NumeroCartas();
+            
 
-            int CartasJugador = NumeroCartas(); // el jugador tiene 0 cartas en mano
-            string opcion = PedirCartas(); // se le dio al jugador la opcion de pedir mas cartas
+     
 
-            int cartaAleatoria = generarCartas();
+            while (suma < 21)
+            {
+                Console.WriteLine("¿Desea una nueva carta?");
+                Console.WriteLine("s = si"); // s para si 
+                Console.WriteLine("n = no"); //n para no 
+                string opcion = Convert.ToString(Console.ReadLine());
+                
+                if (opcion == "s")
+                {
+                    Random rnd = new Random();
+                     int aiCarta = rnd.Next(1, 12);
 
-            EntregaDeCarta(CartasJugador, opcion, cartaAleatoria);
+            
+                    
+                    suma = aiCarta + suma; //sumamos el numero de cartas del jugador con el puntaje de las cartas aleatorias
 
-            sumaPuntos(cartaAleatoria, CartasJugador); //sumatoria puntos jugador
 
+                    Console.WriteLine("puntos de cartas: " + suma);
+                }
+
+            }
         }
 
 
 
+       
+
+       
 
 
 
 
 
+       
 
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
