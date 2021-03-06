@@ -40,7 +40,7 @@ namespace Blackjack
         {
             Console.WriteLine("¿Desea una nueva carta?");
             Console.WriteLine("s = si"); // s para si 
-            Console.WriteLine("n = no"); //n para no 
+            Console.WriteLine("e = no"); //n para no 
 
             string opcion = Convert.ToString(Console.ReadLine());
             return opcion;
